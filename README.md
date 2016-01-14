@@ -14,7 +14,11 @@
 * [Recipes](/docs/README.md/) for ES2015 support, Polymer performance, using Chrome Dev Editor, Deploying to GitHub Pages, Deploying to Firebase, and Mobile Chrome Apps
 
 ### Demo
+<<<<<<< HEAD
 See latest Polymer Starter Kit Demo (from master) at https://polymerelements.github.io/polymer-starter-kit/
+=======
+See latest Polymer Starter Kit Demo (from master) at http://polymerelements.github.io/polymer-starter-kit
+>>>>>>> cfc43086436073a0c06e0178d40e74f031bd0107
 
 ### Tutorials
 
