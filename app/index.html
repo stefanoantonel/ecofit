@@ -103,6 +103,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
+
+          <div class="drawer-separator"></div>
+
+          <a data-route="upload" href="{{baseUrl}}upload">
+            <iron-icon icon="icons:file-upload"></iron-icon>
+            <span>Agregar</span>
+          </a>
+
+
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -129,18 +138,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <paper-toolbar id="tabsToolbar">
           <!-- Tabs for the 3 categories -->
-          <style is="custom-style">
-          .link-icon {
-            color: inherit;
-            background-color: inherit;
-            display: flex;
-            justify-content: center;
-          }
-          paper-tabs {
-            width: 100%;
-          }
-          </style>
-          <paper-tabs class="link-icon" attr-for-selected="name" selected="[[route]]">
+          <paper-tabs noink class="link-icon" attr-for-selected="name" selected="[[route]]">
             <paper-tab link name="home">
               <a href="{{baseUrl}}" class="link-icon">
                 <paper-icon-button id="home" class="" icon="icons:home"></paper-icon-button>
@@ -182,6 +180,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <exercise-elem></exercise-elem>
             </section>
 
+            <section data-route="upload">
+              <upload-elem><upload-elem>
+            </section>
+
             <section data-route="users">
               <paper-material elevation="1">
 
@@ -211,13 +213,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </paper-material>
               </section>
             </iron-pages>
-            <!-- To move between the different pages -->
-            <!-- <script>
-            document.addEventListener('click', function(e) {
-            var pages = document.querySelector('iron-pages');
-            pages.selectNext();
-          });
-        </script> -->
       </div>
     </paper-scroll-header-panel>
   </paper-drawer-panel>

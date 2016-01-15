@@ -1,0 +1,75 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/file-upload/file-upload.html">
+
+<dom-module id="upload-elem">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+      .body-upload {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+      .upload {
+        display: flex;
+        justify-content: center;
+        margin-top: 22px;
+      }
+      .page-title {
+        margin: 0 auto;
+      }
+      .dropdown {
+        width: 31%;
+        min-width: 100px;
+        align-self: center;
+      }
+    </style>
+    <div class="body-upload">
+      <h2 class="page-title">{{greeting}}</h2>
+      <paper-dropdown-menu Required toogle noink class="dropdown" label="Categoria" no-label-float>
+        <!-- <paper-tabs class="dropdown-content">
+        <paper-tab>Receta</paper-tab>
+        <paper-tab>Ejercicio</paper-tab>
+        </paper-tabs> -->
+        <paper-menu class="dropdown-content">
+          <paper-item>Receta</paper-item>
+          <paper-item>Ejercicio</paper-item>
+        </paper-menu>
+      </paper-dropdown-menu>
+      <file-upload raised class="upload">Seleccionar archivo</file-upload>
+    </div>
+
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'upload-elem',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Agregar Post',
+            notify: true
+          }
+        },
+        attached: function() {
+          var typeUpload = document.getElementsByClassName('toogle-type');
+          // console.log(typeUpload);
+          // if (this.disabled) {
+          //   return;
+          // }
+          // this.checked = !this.checked;
+          // this.fire('change');
+        },
+      });
+    })();
+  </script>
+
+</dom-module>
