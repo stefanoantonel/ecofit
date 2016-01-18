@@ -23739,7 +23739,10 @@ module.exports = Array.isArray || function (arr) {
       }
     </style>
 
-    <iron-ajax auto="" url="./mock.json" params="{&quot;alt&quot;:&quot;json&quot;, &quot;q&quot;:&quot;chrome&quot;}" handle-as="json" on-response="handleResponse" debounce-duration="300"></iron-ajax>
+    
+
+    <iron-ajax auto="" url="http://raw.githubusercontent.com/stefanoantonel/ecofit/update-elem/mockFood.json" params="{&quot;alt&quot;:&quot;json&quot;, &quot;q&quot;:&quot;chrome&quot;}" handle-as="json" on-response="handleResponse" debounce-duration="300"></iron-ajax>
+
     <paper-fab icon="add" class="button-add" on-tap="uploadElem"></paper-fab>
 
     <template is="dom-repeat" items="{{foods}}">
@@ -23748,12 +23751,18 @@ module.exports = Array.isArray || function (arr) {
           <template is="dom-if" if="{{!item.isImg}}">
             
             <video width="100%" height="auto" controls="">
-              <source src="/elements/food-elem/{{item.url}}" type="video/mp4">
+              
+              
+              
+              <source src="{{item.url}}" type="video/mp4">
               
             </video>
           </template>
           
-          <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-food">
+          
+          
+          
+          <img src="{{item.url}}" alt="" width="100%" height="auto" class="img-food">
           <span>{{item.description}}</span>
         </paper-material>
     </template>
@@ -23798,6 +23807,26 @@ module.exports = Array.isArray || function (arr) {
   </script>
 
 </dom-module>
+[
+  {
+    "title": "Ejercicio 1",
+    "description": "Estire lo mas posible a la mañana",
+    "url": "./images/ejercicio1.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 2",
+    "description": "Haga flexiones de brazos cuando tenga timepo",
+    "url": "./images/ejercicio3.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 3",
+    "description": "Haga lo que dice el video",
+    "url": "./images/receta3.mp4",
+    "isImg": false
+  }
+]
 <dom-module id="exercise-elem" assetpath="exercise-elem/">
   <template>
     <style include="shared-styles"></style>
@@ -23826,7 +23855,10 @@ module.exports = Array.isArray || function (arr) {
 
     <paper-fab icon="add" class="button-add"></paper-fab>
 
-    <iron-ajax auto="" url="./mock.json" params="{&quot;alt&quot;:&quot;json&quot;, &quot;q&quot;:&quot;chrome&quot;}" handle-as="json" on-response="handleResponse" debounce-duration="300"></iron-ajax>
+    
+
+    <iron-ajax auto="" url="http://raw.githubusercontent.com/stefanoantonel/ecofit/update-elem/mockExercise.json" params="{&quot;alt&quot;:&quot;json&quot;, &quot;q&quot;:&quot;chrome&quot;}" handle-as="json" on-response="handleResponse" debounce-duration="300"></iron-ajax>
+
     <paper-fab icon="add" class="button-add" on-tap="uploadElem"></paper-fab>
 
     <template is="dom-repeat" items="{{exercises}}">
@@ -23835,12 +23867,16 @@ module.exports = Array.isArray || function (arr) {
           <template is="dom-if" if="{{!item.isImg}}">
             
             <video width="100%" height="auto" controls="">
-              <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4">
+              
+              
+              <source src="{{item.url}}" type="video/mp4">
               
             </video>
           </template>
           
-          <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise">
+          
+          
+          <img src="{{item.url}}" alt="" width="100%" height="auto" class="img-exercise">
           <span>{{item.description}}</span>
         </paper-material>
     </template>
