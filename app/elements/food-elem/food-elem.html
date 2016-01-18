@@ -28,13 +28,22 @@
       }
     </style>
 
-    <iron-ajax
+    <!-- <iron-ajax
       auto
       url="./mock.json"
       params='{"alt":"json", "q":"chrome"}'
       handle-as="json"
       on-response="handleResponse"
+      debounce-duration="300"></iron-ajax> -->
+
+    <iron-ajax
+      auto
+      url="http://raw.githubusercontent.com/stefanoantonel/ecofit/update-elem/mockFood.json"
+      params='{"alt":"json", "q":"chrome"}'
+      handle-as="json"
+      on-response="handleResponse"
       debounce-duration="300"></iron-ajax>
+
     <paper-fab icon="add" class="button-add" on-tap="uploadElem"></paper-fab>
 
     <template is="dom-repeat" items="{{foods}}">
@@ -43,12 +52,18 @@
           <template is="dom-if" if="{{!item.isImg}}">
             <!-- If this is a video -->
             <video width="100%" height="auto" controls>
-              <source src="/elements/food-elem/{{item.url}}" type="video/mp4">
+              <!-- Local -->
+              <!-- <source src="/elements/food-elem/{{item.url}}" type="video/mp4"> -->
+              <!-- Remote -->
+              <source src="{{item.url}}" type="video/mp4">
               <!-- <source src="movie.ogg" type="video/ogg"> -->
             </video>
           </template>
           <!-- Img is going to be hidden using css "video + template + .img-food" -->
-          <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-food"/>
+          <!-- Local Assets -->
+          <!-- <img src="/elements/food-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-food"/> -->
+          <!-- Remote assets -->
+          <img src="{{item.url}}" alt="" width="100%" height="auto" class="img-food"/>
           <span>{{item.description}}</span>
         </paper-material>
     </template>

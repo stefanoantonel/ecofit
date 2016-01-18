@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="./mock.json">
 
 <dom-module id="exercise-elem">
   <template>
@@ -28,13 +29,22 @@
 
     <paper-fab icon="add" class="button-add"></paper-fab>
 
-    <iron-ajax
+    <!-- <iron-ajax
       auto
       url="./mock.json"
       params='{"alt":"json", "q":"chrome"}'
       handle-as="json"
       on-response="handleResponse"
+      debounce-duration="300"></iron-ajax> -->
+
+    <iron-ajax
+      auto
+      url="http://raw.githubusercontent.com/stefanoantonel/ecofit/update-elem/mockExercise.json"
+      params='{"alt":"json", "q":"chrome"}'
+      handle-as="json"
+      on-response="handleResponse"
       debounce-duration="300"></iron-ajax>
+
     <paper-fab icon="add" class="button-add" on-tap="uploadElem"></paper-fab>
 
     <template is="dom-repeat" items="{{exercises}}">
@@ -43,12 +53,16 @@
           <template is="dom-if" if="{{!item.isImg}}">
             <!-- If this is a video -->
             <video width="100%" height="auto" controls>
-              <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4">
+              <!-- Local -->
+              <!-- <source src="/elements/exercise-elem/{{item.url}}" type="video/mp4"> -->
+              <source src="{{item.url}}" type="video/mp4">
               <!-- <source src="movie.ogg" type="video/ogg"> -->
             </video>
           </template>
           <!-- It is going to be hide using css "video + template + .img-food" -->
-          <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/>
+          <!-- Local assets -->
+          <!-- <img src="/elements/exercise-elem/{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/> -->
+          <img src="{{item.url}}" alt="" width="100%" height="auto" class="img-exercise"/>
           <span>{{item.description}}</span>
         </paper-material>
     </template>
