@@ -22,24 +22,46 @@
         margin: 0 auto;
       }
       .dropdown {
-        width: 31%;
-        min-width: 100px;
+        width: 100px;
         align-self: center;
+        margin-top: 20px;
       }
+      .upload-comment {
+
+      }
+      .upload-input {
+          margin: 5% 5%;
+      }
+
+      /* Small */
+      @media (max-width: 600px) {
+
+      }
+
+      /* Tablet+ */
+      @media (min-width: 601px) {
+        :host {
+          margin: 0 25%;
+        }
+      }
+
+
+
     </style>
     <div class="body-upload">
       <h2 class="page-title">{{greeting}}</h2>
-      <paper-dropdown-menu Required toogle noink class="dropdown" label="Categoria" no-label-float>
-        <!-- <paper-tabs class="dropdown-content">
-        <paper-tab>Receta</paper-tab>
-        <paper-tab>Ejercicio</paper-tab>
-        </paper-tabs> -->
+      <paper-input class="title upload-input" label="Titulo"></paper-input>
+      <!-- To choose the categorie -->
+      <paper-dropdown-menu Required toogle noink class="dropdown" label="Categoria">
         <paper-menu class="dropdown-content">
           <paper-item>Receta</paper-item>
           <paper-item>Ejercicio</paper-item>
         </paper-menu>
       </paper-dropdown-menu>
-      <file-upload raised class="upload">Seleccionar archivo</file-upload>
+      <!-- <paper-input label="Input label" type="file"></paper-input> -->
+      <file-upload raised noink class="upload">Seleccionar archivo</file-upload>
+      <paper-textarea class="comment upload-input" label="Comentario"></paper-textarea>
+      <paper-button raised noink>Terminado</paper-button>
     </div>
 
 
@@ -60,7 +82,7 @@
           }
         },
         attached: function() {
-          var typeUpload = document.getElementsByClassName('toogle-type');
+          // var typeUpload = document.getElementsByClassName('toogle-type');
           // console.log(typeUpload);
           // if (this.disabled) {
           //   return;

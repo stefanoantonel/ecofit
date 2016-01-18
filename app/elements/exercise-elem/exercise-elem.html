@@ -35,7 +35,7 @@
       handle-as="json"
       on-response="handleResponse"
       debounce-duration="300"></iron-ajax>
-    <paper-fab icon="add" class="button-add"></paper-fab>
+    <paper-fab icon="add" class="button-add" on-tap="uploadElem"></paper-fab>
 
     <template is="dom-repeat" items="{{exercises}}">
         <paper-material elevation="1">
@@ -82,6 +82,11 @@
           var response = r.response;
           console.log(response);
           this.exercises = response;
+        },
+
+        uploadElem: function() {
+          var pages = document.getElementById('main-pages');
+          pages.selected = 'upload';
         }
       });
     })();
