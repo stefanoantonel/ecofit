@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Ejercicio 1",
+    "description": "Correr mucho",
+    "url": "http://raw.githubusercontent.com/stefanoantonel/ecofit/dev/app/elements/exercise-elem/images/ejercicio1.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 2",
+    "description": "Ejercitar los abodominales",
+    "url": "http://raw.githubusercontent.com/stefanoantonel/ecofit/dev/app/elements/exercise-elem/images/ejercicio2.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Ejercicio 3",
+    "description": "Poner en el molde el video",
+    "url": "http://github.com/stefanoantonel/ecofit/blob/dev/app/elements/exercise-elem/images/receta3.mp4?raw=true",
+    "isImg": false
+  }
+]

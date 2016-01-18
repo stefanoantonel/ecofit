@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Receta 1",
+    "description": "Mezclar harina con el agua y luego revolver mucho",
+    "url": "http://raw.githubusercontent.com/stefanoantonel/ecofit/dev/app/elements/food-elem/images/receta1.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Receta 2",
+    "description": "Unir los ingredientes para formar algo",
+    "url": "http://raw.githubusercontent.com/stefanoantonel/ecofit/dev/app/elements/food-elem/images/receta2.jpg",
+    "isImg": true
+  },
+  {
+    "title": "Receta 3",
+    "description": "Poner en el molde el video",
+    "url": "http://github.com/stefanoantonel/ecofit/blob/dev/app/elements/food-elem/images/receta3.mp4?raw=true",
+    "isImg": false
+  }
+]
